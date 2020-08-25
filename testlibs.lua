@@ -1,8 +1,8 @@
-json = require("json")
-docker = require("luaclibdocker")
-CLD = require("cld")
+local json = require("json")
+local docker = require("luaclibdocker")
+local CLD = require("cld")
 
-d = docker.connect()
+local d = docker.connect()
 d:set_loglevel(2)
 local cld = CLD:new(d)
 
@@ -16,7 +16,7 @@ print(ctr_ls_str)
 -- use CLD library to list containers
 print("---------------------------------------------------")
 print("container list from CLD")
-ls_options = {
+local ls_options = {
     ["all"] = {["val"] = false},
     ["filter"] = {["val"] = nil},
     ["format"] = {["val"] = nil},
@@ -26,5 +26,5 @@ ls_options = {
     ["quiet"] = {["val"] = false},
     ["size"] = {["val"] = false}
 }
-output = cld:run("container", "ls", ls_options)
+local output = cld:run("container", "ls", ls_options)
 -- print(output)
