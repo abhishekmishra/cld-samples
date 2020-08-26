@@ -7,6 +7,9 @@
             "label": "Run lua script",
             "type": "shell",
             "command": "lua ${file}",
+            "options": {
+                "cwd": "${fileDirname}"
+            }
         }
     ]
 }
