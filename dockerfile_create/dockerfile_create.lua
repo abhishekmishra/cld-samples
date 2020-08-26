@@ -7,6 +7,4 @@ local df = Dockerfile:new()
 
 print (df:contents())
 
-local dfile = io.open('Dockerfile', 'w')
-dfile:write(df:contents())
-dfile:close()
+df:write('Dockerfile')
